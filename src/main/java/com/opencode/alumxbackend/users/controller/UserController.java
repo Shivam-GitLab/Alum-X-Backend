@@ -1,6 +1,6 @@
 package com.opencode.alumxbackend.users.controller;
 
-import com.opencode.alumxbackend.users.dto.DevUserRequest;
+import com.opencode.alumxbackend.users.dto.UserRequest;
 import com.opencode.alumxbackend.users.model.User;
 import com.opencode.alumxbackend.users.model.UserRole;
 import com.opencode.alumxbackend.users.repository.UserRepository;
@@ -16,14 +16,14 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/dev/users")
 @RequiredArgsConstructor
-public class DevUserController {
+public class UserController {
 
         private final UserRepository userRepository;
         private final PasswordEncoder passwordEncoder;
         private static final String DUMMY_TOKEN = "alumx-dev-token";
 
         private static final java.util.logging.Logger logger = java.util.logging.Logger
-                        .getLogger(DevUserController.class.getName());
+                        .getLogger(UserController.class.getName());
 
         /**
          * Creates a new user in the database.
@@ -38,7 +38,7 @@ public class DevUserController {
          */
         @PostMapping
         public ResponseEntity<?> createUser(@RequestHeader(value = "X-DUMMY-TOKEN", required = false) String token,
-                        @Valid @RequestBody DevUserRequest request) {
+                        @Valid @RequestBody UserRequest request) {
 
                 // 1. Validate Token
                 if (token == null || !token.equals(DUMMY_TOKEN)) {
