@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 
-@ControllerAdvise(basePackages = "com.opencode.alumxbackend.users")
+@ControllerAdvice(basePackages = "com.opencode.alumxbackend.users")
 public class GlobalExceptionHandler{
 
     @ExceptionHandler(ResourceNotFoundException.class)
