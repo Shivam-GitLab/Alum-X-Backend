@@ -9,5 +9,8 @@ public class AlumXBackendApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(AlumXBackendApplication.class, args);
+
+        System.out.println("Hello from Spring Boot!");
+
     }
 }
